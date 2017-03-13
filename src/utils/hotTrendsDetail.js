@@ -12,7 +12,7 @@ module.exports = function request(geo, cbFunc){
 	if(error instanceof Error) return Promise.reject(obj.cbFunc(error));
 
 	var options = {
-		uri: `http://www.${obj.countryDomain}/trends/hottrends/atom/feed?pn=p${obj.countryCode}`
+		uri: `https://www.${obj.countryDomain}/trends/hottrends/atom/feed?pn=p${obj.countryCode}`
 	};
 
 	return rp(options)
