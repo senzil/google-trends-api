@@ -497,7 +497,7 @@ ZW: 'google.co.zw' };
 
 
 function getCountryCode (country) {
-	return mapToNumber[country] || mapToNumber[getCountryAbbreviation(country)];
+	return mapToNumber[country] || mapToNumber[getCountryAbbreviation(country) || mapToNumber['US'] ];
 }
 
 function getCountryAbbreviation(country){
