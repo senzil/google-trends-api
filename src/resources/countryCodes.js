@@ -497,7 +497,7 @@ ZW: 'google.co.zw' };
 
 
 function getCountryCode (country) {
-	return mapToNumber[country] || mapToNumber[getCountryAbbreviation(country) || mapToNumber['US'] ];
+	return mapToNumber[country] || mapToNumber[getCountryAbbreviation(country)] || mapToNumber['US'];
 }
 
 function getCountryAbbreviation(country){
@@ -505,7 +505,7 @@ function getCountryAbbreviation(country){
 }
 
 function getCountryDomain(country){
-	return mapToDomain[country] || mapToDomain[getCountryAbbreviation(country)];
+	return mapToDomain[country] || mapToDomain[getCountryAbbreviation(country)] || mapToDomain['COM'];
 }
 
 module.exports = {

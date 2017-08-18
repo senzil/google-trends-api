@@ -7,10 +7,10 @@ var should = chai.should();
 
 var risingSearches = require(__dirname + '/../../lib/utils/risingSearches.js');
 
-module.exports = 
+module.exports =
 describe('risingSearches.js', function(){
-	it('should reject if country is invalid', function(){
-		return risingSearches('dogs', {type: 'hour', value: 5}, 'ZZ').should.be.rejectedWith('Could not locate country');
+	it('should resolve if country is invalid. with US', function(){
+		return risingSearches('dogs', {type: 'hour', value: 5}, 'ZZ').should.be.fulfilled //.be.rejectedWith('Could not locate country');
 	});
 	it('should reject if timePeriod is invalid', function(){
 		return risingSearches('dogs', {type: 'hours', value: 5}, 'US').should.be.rejectedWith('type must be one of the specified enumerated types');

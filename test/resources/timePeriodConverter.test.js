@@ -9,9 +9,9 @@ var assert = chai.assert;
 
 var timePeriodConverter = require(__dirname + '/../../lib/resources/timePeriodConverter.js');
 
-module.exports = 
+module.exports =
 describe('timePeriodConverter.test.js', function(){
-	
+
 	describe('timePeriodConverter', function(){
 		it('exists', function(){
 			assert.isFunction(timePeriodConverter);
@@ -34,11 +34,11 @@ describe('timePeriodConverter.test.js', function(){
 			expect(timePeriodConverter({type: 'hour'})).to.be.an('error').and.have.property('message', 'timePeriod value must be a number');
 		});
 		it('returns properly formatted string', function(){
-			expect(timePeriodConverter({type: 'HoUr', value: 5})).to.deep.equal('date=now 5-H');
-			expect(timePeriodConverter({type: 'hour', value: 5})).to.deep.equal('date=now 5-H');
-			expect(timePeriodConverter({type: 'day', value: 5})).to.deep.equal('date=now 5-d');
-			expect(timePeriodConverter({type: 'month', value: 5})).to.deep.equal('date=today 5-m');
-			expect(timePeriodConverter({type: 'year', value: 5})).to.deep.equal('date=today 60-m');
+			expect(timePeriodConverter({type: 'HoUr', value: 5})).to.deep.equal('date=now+5-H');
+			expect(timePeriodConverter({type: 'hour', value: 5})).to.deep.equal('date=now+5-H');
+			expect(timePeriodConverter({type: 'day', value: 5})).to.deep.equal('date=now+5-d');
+			expect(timePeriodConverter({type: 'month', value: 5})).to.deep.equal('date=today+5-m');
+			expect(timePeriodConverter({type: 'year', value: 5})).to.deep.equal('date=today+60-m');
 		});
 	});
 
